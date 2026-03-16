@@ -1,6 +1,6 @@
-# Bailers project
+# Capstone project
 
-Get data from somewhere
+ARTIS data pulled, invasive data pulled from FishBase
 
 Update your project path in functions_template and rename the file to functions
 
