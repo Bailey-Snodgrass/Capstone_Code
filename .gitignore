@@ -1,0 +1,17 @@
+# Ignore generated CSVs
+csv/
+
+# Ignore localized version of functions script
+functions.R
+
+# Ignore old scripts 
+non_official/
+
+# Ignore raw data files (parquet, zips, etc.)
+raw_data/
+
+# R temporary / history files
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
