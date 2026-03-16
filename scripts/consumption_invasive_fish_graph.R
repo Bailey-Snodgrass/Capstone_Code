@@ -1,9 +1,9 @@
 library(here)
 source(here("R", "functions.R"))
 
-current_fish <- "Grass_Carp"
+current_fish <- "Grass Carp"
 
-fish_df <- read.csv(here("csv", paste0(current_fish, "_Consumption.csv")))
+fish_df <- read.csv(here("csv", "invasive", paste0(current_fish, "_Consumption.csv")))
 
 fish_df <- fish_df %>%
     filter(
