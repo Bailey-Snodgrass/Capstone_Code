@@ -1,7 +1,7 @@
 library(here)
 source(here("R", "functions.R"))
 
-current_fish <- "Silver_Carp"
+current_fish <- "Grass_Carp"
 
 # nativity is raw data manually created from fishbase
 nativity_df <- read.csv(here("raw_data", "fish_nativity", paste0(current_fish, "_Nativity.csv")))
