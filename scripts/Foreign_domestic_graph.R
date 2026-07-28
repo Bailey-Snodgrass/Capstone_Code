@@ -1,7 +1,7 @@
 library(here)
 source(here("R", "functions.R"))
 
-current_fish <- "Silver_Carp"
+current_fish <- "Bighead_Carp"
 
 fish_df <- read.csv(here("csv", paste0(current_fish, "_Consumption.csv")))
 

@@ -1,11 +1,13 @@
 library(here)
-library(dplyr)
-library(ggplot2)
+source(here("R", "functions.R"))
 
 fish_list <- c(
   "Grass Carp",
   "Silver Carp",
   "Bighead Carp",
+  "Lionfish",
+  "Goldfish",
+  #"Snakehead"
   "Common Carp"
 )
 
@@ -26,28 +28,22 @@ combined_trends <- lapply(fish_list, function(current_fish) {
       .groups = "drop"
     ) %>%
     mutate(fish = current_fish)
-}) %>%
-  bind_rows()
+}) %>% bind_rows()
 
-lines_of_best_fit <- ggplot(
+plot <- ggplot(
   combined_trends,
   aes(
-    x = year,
-    y = total_consumption,
+    x = total_consumption,
+    fill = fish,
     color = fish
   )
 ) +
-  geom_point(
-  ) +
-  geom_smooth(
-    method = "lm",
-    se = FALSE,
-    linewidth = 1.2
-  ) +
+  geom_density(alpha = 0.4) +
   labs(
-    title = "Consumption Trends by Species",
-    y = "Total Consumption in tons"
+    title = "Distribution of Fish Export Totals",
+    x = "Export Total (Live Tons)",
+    y = "Density"
   ) +
   theme_minimal()
 
-print(lines_of_best_fit)
+print(plot)
